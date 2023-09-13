@@ -20,7 +20,11 @@ export default {
       axios
         .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0")
         .then((result) => {
-          this.cards = result.data.data;
+          const cardsData = result.data.data.map((card) => {
+            const { name, card_images, archetype } = card;
+            return { name, card_images, archetype };
+          });
+          this.cards = cardsData;
         });
     },
   },
@@ -59,8 +63,12 @@ section {
   width: 20%;
   border: 1px solid black;
   background-color: #d48f38;
+
+  .title {
+    color: white;
+  }
 }
 img {
-  width: 150px;
+  width: 170px;
 }
 </style>

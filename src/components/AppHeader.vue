@@ -8,7 +8,7 @@ export default {
 
 <template>
   <header class="container">
-    <img src="../../public/logo-yugioh.webp" alt="" width="200" />
+    <img src="/logo-yugioh.webp" alt="" width="200" />
     <span>Yu-Gi-Oh Api</span>
   </header>
 </template>
